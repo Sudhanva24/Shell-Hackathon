@@ -13,16 +13,15 @@ is enhanced by a pipeline that includes targeted outlier removal.
 Our initial approach involved using a standard gradient-boosted model, LightGBM,
 which established a baseline leaderboard score of 78. We transitioned from
 tree-based models to a more advanced architecture: TabPFN (Tabular Prior-Fitted
-Network) . This model was selected for its state-of-the-art performance on
+Network). This model was selected for its state-of-the-art performance on
 small-to-medium tabular datasets without requiring extensive hyperparameter
-tuning.The Score instantly rose to 88. While solid, this score indicated that the model
+tuning. The Score instantly rose to 88. While solid, this score indicated that the model
 was not fully capturing the complex interactions within the fluid mixture.
 To address this, we implemented a foundational feature engineering strategy. New
-features were created by multiplying the fraction of each component by its
+Features were created by multiplying the fraction of each component by its
 corresponding intrinsic properties.
 - Technique: New Feature = Component_Fraction * Component_Property
-- Impact: This step was highly effective, immediately boosting the score from 88 to
-91.
+- Impact: This step was highly effective, immediately boosting the score from 88 to 91.
 - Rationale: This confirmed a critical hypothesis: the contribution of a
 component's property to the final blend is directly proportional to its fraction in
 the mixture. This initial success guided all subsequent modeling efforts toward
